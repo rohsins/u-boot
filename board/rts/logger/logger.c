@@ -431,7 +431,8 @@ static char *board_string(void)
 
 int checkboard(void)
 {
-	printf("Board: RTS Logger %s\n", board_string());
+	printf("Board: RTS Logger by Harware Division\n");
+	// printf("Board: RTS Logger %s\n", board_string());
 	return 0;
 }
 
