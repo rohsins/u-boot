@@ -1,10 +1,3 @@
-// SPDX-License-Identifier: GPL-2.0+
-/*
- * Copyright (C) 2013 Freescale Semiconductor, Inc.
- *
- * Author: Fabio Estevam <fabio.estevam@freescale.com>
- */
-
 #include <init.h>
 #include <net.h>
 #include <asm/arch/clock.h>
@@ -72,7 +65,7 @@ static iomux_v3_cfg_t const wdog_pads[] = {
 int mx6_rgmii_rework(struct phy_device *phydev)
 {
 	/*
-	 * Bug: Apparently uDoo does not works with Gigabit switches...
+	 * Bug: Apparently this does not works with Gigabit switches...
 	 * Limiting speed to 10/100Mbps, and setting master mode, seems to
 	 * be the only way to have a successfull PHY auto negotiation.
 	 * How to fix: Understand why Linux kernel do not have this issue.
@@ -267,9 +260,9 @@ int board_late_init(void)
 int checkboard(void)
 {
 	if (is_cpu_type(MXC_CPU_MX6Q))
-		puts("Board: Udoo Quad\n");
+		puts("Board: RTS Logger Quad\n");
 	else
-		puts("Board: Udoo DualLite\n");
+		puts("Board: RTS Logger DualLite\n");
 
 	return 0;
 }

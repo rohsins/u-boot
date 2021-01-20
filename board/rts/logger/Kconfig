@@ -1,12 +1,12 @@
 if TARGET_RTS_LOGGER
 
 config SYS_VENDOR
-	default "RTS"
+	default "rts"
 
 config SYS_BOARD
-	default "RTS Logger"
+	default "logger"
 
 config SYS_CONFIG_NAME
-	default "rtsLogger"
+	default "rts_logger"
 
 endif

@@ -1,1 +1,1 @@
-obj-y  := logger.o logger_spl.o
+obj-y  := rts.o rts_spl.o

@@ -1,9 +1,9 @@
 if TARGET_RTS
 
 config SYS_BOARD
-	default "RTS"
+	default "rts"
 
 config SYS_CONFIG_NAME
-	default "RTS"
+	default "rts"
 
 endif

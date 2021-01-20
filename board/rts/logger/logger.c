@@ -36,10 +36,10 @@
 DECLARE_GLOBAL_DATA_PTR;
 
 enum {
-	UDOO_NEO_TYPE_BASIC,
-	UDOO_NEO_TYPE_BASIC_KS,
-	UDOO_NEO_TYPE_FULL,
-	UDOO_NEO_TYPE_EXTENDED,
+	RTS_LOGGER_TYPE_BASIC,
+	RTS_LOGGER_TYPE_BASIC_KS,
+	RTS_LOGGER_TYPE_FULL,
+	RTS_LOGGER_TYPE_EXTENDED,
 };
 
 #define UART_PAD_CTRL  (PAD_CTL_PKE | PAD_CTL_PUE |		\
@@ -417,13 +417,13 @@ int board_mmc_init(struct bd_info *bis)
 static char *board_string(void)
 {
 	switch (get_board_value()) {
-	case UDOO_NEO_TYPE_BASIC:
+	case RTS_LOGGER_TYPE_BASIC:
 		return "BASIC";
-	case UDOO_NEO_TYPE_BASIC_KS:
+	case RTS_LOGGER_TYPE_BASIC_KS:
 		return "BASICKS";
-	case UDOO_NEO_TYPE_FULL:
+	case RTS_LOGGER_TYPE_FULL:
 		return "FULL";
-	case UDOO_NEO_TYPE_EXTENDED:
+	case RTS_LOGGER_TYPE_EXTENDED:
 		return "EXTENDED";
 	}
 	return "UNDEFINED";
@@ -431,7 +431,7 @@ static char *board_string(void)
 
 int checkboard(void)
 {
-	printf("Board: UDOO Neo %s\n", board_string());
+	printf("Board: RTS Logger %s\n", board_string());
 	return 0;
 }
 
@@ -562,7 +562,7 @@ static void spl_dram_init(void)
 	};
 
 	mx6sx_dram_iocfg(32, &mx6_ddr_ioregs, &mx6_grp_ioregs);
-	if (board == UDOO_NEO_TYPE_BASIC || board == UDOO_NEO_TYPE_BASIC_KS)
+	if (board == RTS_LOGGER_TYPE_BASIC || board == RTS_LOGGER_TYPE_BASIC_KS)
 		mx6_dram_cfg(&sysinfo, &neo_basic_mmcd_calib,
 			     &neo_basic_mem_ddr);
 	else

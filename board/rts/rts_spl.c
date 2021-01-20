@@ -1,11 +1,3 @@
-// SPDX-License-Identifier: GPL-2.0+
-/*
- * Copyright (C) 2015 Udoo
- * Author: Tungyi Lin <tungyilin1127@gmail.com>
- *         Richard Hu <hakahu@gmail.com>
- * Based on board/wandboard/spl.c
- */
-
 #include <common.h>
 #include <init.h>
 #include <asm/arch/clock.h>
