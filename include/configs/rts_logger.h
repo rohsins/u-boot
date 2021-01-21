@@ -32,17 +32,7 @@
 	"ip_dyn=yes\0" \
 	"mmcdev=0\0" \
 	"mmcrootfstype=ext4\0" \
-	"findfdt="\
-		"if test $board_name = BASIC; then " \
-			"setenv fdtfile imx6sx-rts-logger-basic.dtb; fi; " \
-		"if test $board_name = BASICKS; then " \
-			"setenv fdtfile imx6sx-rts-logger-basic.dtb; fi; " \
-		"if test $board_name = FULL; then " \
-			"setenv fdtfile imx6sx-rts-logger-full.dtb; fi; " \
-		"if test $board_name = EXTENDED; then " \
-			"setenv fdtfile imx6sx-rts-logger-extended.dtb; fi; " \
-		"if test $fdtfile = UNDEFINED; then " \
-			"echo WARNING: Could not determine dtb to use; fi\0" \
+	"findfdt=setenv fdtfile dts/rts-logger.dtb\0" \
 	"kernel_addr_r=" __stringify(CONFIG_LOADADDR) "\0" \
 	"pxefile_addr_r=" __stringify(CONFIG_LOADADDR) "\0" \
 	"ramdisk_addr_r=0x84000000\0" \
